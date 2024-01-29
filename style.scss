@@ -1,0 +1,185 @@
+@import '_basic';
+
+.background{
+    width: 100%;
+    height: 100vh;
+    background-color: bisque;
+    background-image: url('/assets/UN_General_Assembly_hall.jpg');
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    .overlay{
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(30,30,30,.55), #1E1E1E);
+        z-index: 1;
+    }
+    
+}
+
+
+.info{
+    padding: 14rem 0;
+    h1{
+        font-family: 'Inter', sans-serif;
+        font-size: 3rem;
+        font-weight: 400;
+        color: rgba($color: #fff, $alpha: 0.75);
+        margin-bottom: 2rem;
+        span{
+            font-weight: 700;
+            opacity: 1;
+            color: #fff;
+        }
+    }
+    h3{
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.bento{
+  
+    .bento-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        $card-width: 100%;
+        .column{
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            margin: 1rem;
+            width: 30%;
+            height: 90vh; //HEIGHT of the COLUMN **
+
+            .card{
+                width: $card-width;
+                border-radius: 1rem;
+                height: 30vh;
+            }
+        }
+        .c1{
+            width: 25%;
+            .one{
+                background-image: url('/assets/gun-img.jpg');
+                background-size: cover;
+            }
+            .two{
+                background-color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 5rem;
+                h3{
+                    text-transform: uppercase;
+                    color: #000;
+                    font-size: 2rem;
+                }
+            }
+            .three{
+                height: 40vh;
+                width: $card-width;
+                background: linear-gradient(138deg, $accent -1.44%, #FFA800 100%);
+                position: relative;
+                img{
+                    width: 70%;
+                    float: right;
+                }
+                a{
+                    position: absolute;
+                    bottom: 10%;
+                    left: 10%;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    font-size: 2rem;
+                }
+            }
+        }
+        .c2{
+            width: 23%;
+            display: flex;
+            justify-content: space-between;
+            .four{
+                background: linear-gradient(122deg, #1A9CDA 0%, #1674BA 100%);
+                height: 55vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                h1{
+                    font-size: 3rem;
+                    margin-bottom: 1rem;
+                }
+                h2{
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
+                }
+            }
+            .five{
+                background-image: url('/assets/cp.webp');
+                height: 30vh;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+        .c3{
+            width: 35%;
+            .six{
+                border-radius: 1rem;
+                background: linear-gradient(138deg, #F8C017 -1.44%, #FFA800 100%);
+                height: 35vh;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                a{
+                    h2{
+                        text-align: center;
+                        font-family: 'Inter', sans-serif;
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        line-height: 130%;
+                        span{
+                            font-weight: 700;
+                        }
+                    }
+                    
+                }
+            }
+            .seven{
+                height: 50vh;
+                background-image: url('/assets/hq.jpg');
+            }
+            .flex{
+                display: flex;
+                .eight{
+                    height: 30vh;
+                    background: linear-gradient(122deg, #1A9CDA 0%, #1674BA 100%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    font-size: 1.5rem;
+                }
+                .nine{
+                    height: 30vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;   
+                }
+            }
+            
+        }
+        
+
+            
+        
+    }
+    
+}

@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #1B1B1B;
+  font-size: 16px;
+  color: #fff;
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 400 !important;
+}
+
+a {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Nanum Myeongjo", serif;
+  border: none;
+  outline: none;
+  font-size: 1.25rem;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(100deg, #1A9CDA 0%, #1674BA 104.82%);
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 1.25rem;
+  color: #fff;
+  cursor: pointer;
+  width: auto;
+  box-sizing: unset;
+}
+
+nav {
+  background-color: transparent;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+nav .navbar {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+nav .navbar .logo {
+  display: flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+nav .navbar .logo img {
+  height: 4rem;
+  margin-right: 1.5rem;
+}
+nav .navbar .logo .wordmark {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 130%;
+}
+nav .navbar .logo .wordmark span {
+  font-weight: 700;
+}
+nav .navbar .menu {
+  display: flex;
+}
+nav .navbar .menu ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+nav .navbar .menu ul li {
+  margin-right: 3.5rem;
+}
+nav .navbar .menu ul li a {
+  opacity: 0.5;
+}
+nav .navbar .menu ul li .active {
+  opacity: 1;
+}
+nav .navbar .menu ul li:nth-child(3) {
+  margin-right: 0;
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  background-color: bisque;
+  background-image: url("/assets/UN_General_Assembly_hall.jpg");
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+}
+.background .overlay {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(30, 30, 30, 0.55), #1E1E1E);
+  z-index: 1;
+}
+
+.info {
+  padding: 14rem 0;
+}
+.info h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 2rem;
+}
+.info h1 span {
+  font-weight: 700;
+  opacity: 1;
+  color: #fff;
+}
+.info h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.bento .bento-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.bento .bento-container .column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  margin: 1rem;
+  width: 30%;
+  height: 90vh;
+}
+.bento .bento-container .column .card {
+  width: 100%;
+  border-radius: 1rem;
+  height: 30vh;
+}
+.bento .bento-container .c1 {
+  width: 25%;
+}
+.bento .bento-container .c1 .one {
+  background-image: url("/assets/gun-img.jpg");
+  background-size: cover;
+}
+.bento .bento-container .c1 .two {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+}
+.bento .bento-container .c1 .two h3 {
+  text-transform: uppercase;
+  color: #000;
+  font-size: 2rem;
+}
+.bento .bento-container .c1 .three {
+  height: 40vh;
+  width: 100%;
+  background: linear-gradient(138deg, #F8C017 -1.44%, #FFA800 100%);
+  position: relative;
+}
+.bento .bento-container .c1 .three img {
+  width: 70%;
+  float: right;
+}
+.bento .bento-container .c1 .three a {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+}
+.bento .bento-container .c2 {
+  width: 23%;
+  display: flex;
+  justify-content: space-between;
+}
+.bento .bento-container .c2 .four {
+  background: linear-gradient(122deg, #1A9CDA 0%, #1674BA 100%);
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bento .bento-container .c2 .four h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.bento .bento-container .c2 .four h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.bento .bento-container .c2 .five {
+  background-image: url("/assets/cp.webp");
+  height: 30vh;
+  background-size: cover;
+  background-position: center;
+}
+.bento .bento-container .c3 {
+  width: 35%;
+}
+.bento .bento-container .c3 .six {
+  border-radius: 1rem;
+  background: linear-gradient(138deg, #F8C017 -1.44%, #FFA800 100%);
+  height: 35vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bento .bento-container .c3 .six a h2 {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 130%;
+}
+.bento .bento-container .c3 .six a h2 span {
+  font-weight: 700;
+}
+.bento .bento-container .c3 .seven {
+  height: 50vh;
+  background-image: url("/assets/hq.jpg");
+}
+.bento .bento-container .c3 .flex {
+  display: flex;
+}
+.bento .bento-container .c3 .flex .eight {
+  height: 30vh;
+  background: linear-gradient(122deg, #1A9CDA 0%, #1674BA 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.bento .bento-container .c3 .flex .nine {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
