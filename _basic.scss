@@ -11,6 +11,23 @@ $primary-light: #1A9CDA;
 $primary-dark: #1674BA;
 $accent: #F8C017;
 
+$mobile: 600px;
+$tablet-min: 600px;
+$tablet-max: 1100px;
+
+@mixin mobile{
+    @media (max-width: #{$mobile}){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max){
+        @content;
+    }
+}
+
+
 html, body{
     background-color: $background;
     font-size: 16px;
@@ -30,6 +47,10 @@ a{
 .container{
     margin: 0 auto;
     width: 80%;
+
+    @include mobile{
+        width: 90%;
+    }
 }
 
 button{
@@ -39,7 +60,7 @@ button{
 .btn-primary{
     padding: 0.5rem 1.5rem;
     background: linear-gradient(100deg, $primary-light 0%, $primary-dark 104.82%);
-    border: 4px solid rgba(255, 255, 255, .20);
+    border: 4px solid rgba(255, 255, 255, .20) !important;
     border-radius: 2rem;
     font-family: 'Nanum Myeongjo', serif;
     font-size: 1.25rem;
@@ -58,6 +79,10 @@ nav{
         padding: 2rem 0;
         display: flex;
         justify-content: space-between;
+        @include mobile{
+            flex-direction: column;
+            gap: 2.5rem;
+        }
         .logo{
             display: flex;
             align-items: center;
@@ -65,24 +90,39 @@ nav{
             img{
                 height: 4rem;
                 margin-right: 1.5rem;
+                @include mobile{
+                    height: 3rem;
+                }
             }
             .wordmark{
                 font-size: 1.25rem;
                 font-weight: 400;
                 line-height: 130%;
+                @include mobile{
+                    font-size: 1rem;
+                }
                 span{
                     font-weight: 700;
                 }
             }
         }
         .menu{
-            display: flex;
+            display: flex;            
             ul{
                 display: flex;
                 list-style: none;
                 align-items: center;
+                @include mobile{
+                    width: 100%;
+                    justify-content: flex-end;
+                }
                 li{
                     margin-right: 3.5rem;
+                    @include mobile{
+                        margin-right: 0rem;
+                        margin-left: 2rem;
+                        text-align: left;
+                    }
                     a{
                         opacity: .5;
                     }
@@ -92,6 +132,12 @@ nav{
                 }
                 li:nth-child(3){
                     margin-right: 0;
+                    @include mobile{
+                        position: absolute;
+                        right: 5%;
+                        top: 2rem;
+                    }
+
                 }
             }
         }

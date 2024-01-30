@@ -155,6 +155,8 @@
             .seven{
                 height: 50vh;
                 background-image: url('/assets/hq.jpg');
+                background-size: cover;
+                background-position: center;
             }
             .flex{
                 display: flex;
