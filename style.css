@@ -11,11 +11,7 @@ html, body {
   color: #fff;
   font-family: "Nanum Myeongjo", serif;
   font-weight: 400 !important;
-}
-@media (max-width: 600px) {
-  html, body {
-    overflow: hidden;
-  }
+  width: 100vw;
 }
 
 a {
@@ -91,7 +87,7 @@ nav .navbar .logo img {
 @media (max-width: 600px) {
   nav .navbar .logo img {
     height: 2rem;
-    margin-right: 0.5rem;
+    margin-right: 0.35rem;
   }
 }
 nav .navbar .logo .wordmark {
@@ -162,7 +158,8 @@ nav .navbar .menu ul li:nth-child(3) {
 }
 @media (max-width: 600px) {
   .background {
-    height: 100vh !important;
+    width: 100vw;
+    height: 100vh;
   }
 }
 .background .overlay {
@@ -170,6 +167,11 @@ nav .navbar .menu ul li:nth-child(3) {
   height: 100vh;
   background-image: linear-gradient(rgba(30, 30, 30, 0.55), #1E1E1E);
   z-index: 1;
+}
+@media (max-width: 600px) {
+  .background .overlay {
+    width: 100vw;
+  }
 }
 
 .info {
@@ -322,4 +324,9 @@ nav .navbar .menu ul li:nth-child(3) {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 600px) {
+  .bento .bento-container .c3 .flex .nine {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

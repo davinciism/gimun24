@@ -34,9 +34,7 @@ html, body{
     color: #fff;
     font-family: 'Nanum Myeongjo', serif;
     font-weight: 400 !important;
-    @include mobile{
-        overflow: hidden;
-    }
+    width: 100vw;
 }
 a{
     color: #fff;
@@ -100,7 +98,7 @@ nav{
                 margin-right: 1.5rem;
                 @include mobile{
                     height: 2rem;
-                    margin-right: .5rem;
+                    margin-right: .35rem;
                 }
             }
             .wordmark{
