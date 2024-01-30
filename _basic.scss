@@ -34,6 +34,9 @@ html, body{
     color: #fff;
     font-family: 'Nanum Myeongjo', serif;
     font-weight: 400 !important;
+    @include mobile{
+        overflow: hidden;
+    }
 }
 a{
     color: #fff;
@@ -68,6 +71,11 @@ button{
     cursor: pointer;
     width: auto;
     box-sizing: unset;
+
+    @include mobile{
+        padding: 0.5rem 1.25rem;
+        font-size: 1rem;
+    }
 }
 
 nav{
@@ -81,7 +89,7 @@ nav{
         justify-content: space-between;
         @include mobile{
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 2rem;
         }
         .logo{
             display: flex;
@@ -91,7 +99,8 @@ nav{
                 height: 4rem;
                 margin-right: 1.5rem;
                 @include mobile{
-                    height: 3rem;
+                    height: 2rem;
+                    margin-right: .5rem;
                 }
             }
             .wordmark{
@@ -125,6 +134,7 @@ nav{
                     }
                     a{
                         opacity: .5;
+                        font-size: 1rem;
                     }
                     .active{
                         opacity: 1;
