@@ -27,6 +27,13 @@ $tablet-max: 1100px;
     }
 }
 
+.show-on-mob-only{
+    visibility: hidden;
+    @include mobile{
+        visibility: initial;
+    }
+}
+
 
 html, body{
     background-color: $background;
@@ -35,6 +42,7 @@ html, body{
     font-family: 'Nanum Myeongjo', serif;
     font-weight: 400 !important;
     width: 100vw;
+    overflow-x: hidden;
 }
 a{
     color: #fff;
@@ -86,8 +94,9 @@ nav{
         display: flex;
         justify-content: space-between;
         @include mobile{
+            padding: 1rem 0;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1rem;
         }
         .logo{
             display: flex;
@@ -114,7 +123,7 @@ nav{
             }
         }
         .menu{
-            display: flex;            
+            display: flex;
             ul{
                 display: flex;
                 list-style: none;
@@ -129,6 +138,7 @@ nav{
                         margin-right: 0rem;
                         margin-left: 2rem;
                         text-align: left;
+                        //display: none;
                     }
                     a{
                         opacity: .5;
@@ -143,11 +153,32 @@ nav{
                     @include mobile{
                         position: absolute;
                         right: 5%;
-                        top: 2rem;
+                        top: 1rem;
+                        display: block;
                     }
 
                 }
             }
+        }
+    }
+}
+
+.mobile-bottom-nav{
+    position: fixed;
+    bottom: 0;
+    padding: 0.75rem 0rem;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px); 
+    ul{
+        list-style: none;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        a{
+            font-size: 1rem;
         }
     }
 }
