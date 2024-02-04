@@ -44,6 +44,7 @@ html, body{
     font-weight: 400 !important;
     width: 100vw;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 a{
     color: #fff;
@@ -107,12 +108,39 @@ button{
     }
 }
 
-
+.logo{
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    img{
+        height: 4rem;
+        margin-right: 1.5rem;
+        @include mobile{
+            height: 2rem;
+            margin-right: .35rem;
+        }
+    }
+    .wordmark{
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 130%;
+        @include mobile{
+            font-size: 0.85rem;
+        }
+        @include tablet{
+            font-size: 1rem ;
+        }
+        span{
+            font-weight: 700;
+        }
+    }
+}
 nav{
     background-color: transparent;
     width: 100%;
     position: fixed;
     top: 0;
+    z-index: 100;
     .navbar{
         padding: 2rem 0;
         display: flex;
@@ -122,30 +150,7 @@ nav{
             flex-direction: column;
             gap: 1rem;
         }
-        .logo{
-            display: flex;
-            align-items: center;
-            font-family: 'Inter', sans-serif;
-            img{
-                height: 4rem;
-                margin-right: 1.5rem;
-                @include mobile{
-                    height: 2rem;
-                    margin-right: .35rem;
-                }
-            }
-            .wordmark{
-                font-size: 1.25rem;
-                font-weight: 400;
-                line-height: 130%;
-                @include mobile{
-                    font-size: 1rem;
-                }
-                span{
-                    font-weight: 700;
-                }
-            }
-        }
+        
         .menu{
             display: flex;
             ul{
@@ -155,6 +160,7 @@ nav{
                 @include mobile{
                     width: 100%;
                     justify-content: flex-end;
+                    padding-top: 1rem;
                 }
                 li{
                     margin-right: 3.5rem;
@@ -163,6 +169,9 @@ nav{
                         margin-left: 2rem;
                         text-align: left;
                         //display: none;
+                    }
+                    @include tablet{
+                        margin-right: 1.5rem;
                     }
                     a{
                         opacity: .5;
@@ -203,6 +212,213 @@ nav{
         justify-content: space-evenly;
         a{
             font-size: 1rem;
+        }
+    }
+}
+
+footer{
+    .world{
+        display: flex;
+        gap: 6rem;
+        @include mobile{
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .left{
+
+            //Dynamic World Map
+            .map-canvas {
+                text-align: center; 
+                  
+                img {
+                  display: none;
+                }
+                
+                .no-canvas & {
+                  
+                  img {
+                    display: inline-block;
+                    max-width: 100%;
+                    height: auto;
+                  }
+                }
+            }
+            #canvas-map {
+            max-width: 100%;
+            margin: 0 auto;
+            }
+            //Dynamic World Map Ends Here
+        }
+        .right{
+            padding: 4rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @include mobile{
+                justify-content: flex-start;
+            }
+            @include tablet{
+                padding: 2rem 0;
+            }
+            p{
+                font-size: 1.25rem;
+                font-weight: 400;
+                line-height: 144%;
+                @include mobile{
+                    font-size: 1rem;
+                    margin-bottom: 2rem;
+                }
+                @include tablet{
+                     font-size: 1rem;
+                     margin-bottom: 1rem;
+                }
+            }
+            .link{
+                width: auto;
+                @include mobile{
+                    margin-bottom: 3rem;
+                }
+                @include tablet{
+                    margin-bottom: 3rem;
+                }
+                .underline{
+                    height: 1.5px;
+                    width: 230px;
+                    background-color: #fff;
+                    margin-top: 7px;
+                }
+            }
+            .socials{
+                width: 80px;
+                display: flex;
+                justify-content: space-between;
+                a{
+                    opacity: 0.8;
+                    &:hover{
+                        opacity: 1;
+                    }
+                    &:nth-child(3){
+                        display: none;
+                    }
+                }
+            }
+
+        }
+    }
+    .contacts{
+        display: flex;
+        justify-content: space-between;
+        padding: 6rem 0;
+        @include mobile{
+            flex-direction: column;
+            padding: 3rem 0;
+            padding-bottom: 0;
+        }
+        
+        .contact{
+            @include mobile{
+                margin-bottom: 5rem;
+            }
+            @include tablet{
+                width: 30%;
+            }
+            h3{
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+                font-weight: 400;
+            }
+            @include tablet{
+                font-size: 1.125rem;
+            }
+            .divider{
+                height: 4px;
+                width: 2rem;
+                background-color: $accent;
+                margin-bottom: 2rem;
+                @include mobile{
+                    margin-bottom: .75rem;
+                }
+            }
+            .names{
+                display: flex;
+                gap: 1.5rem;
+                @include mobile{
+                    opacity: 0.75;
+                }
+                @include tablet{
+                    flex-direction: column;
+                    padding-top: 1rem;
+                }
+                .name{
+                    @include tablet{
+                        margin-bottom: 1.5rem;
+                    }
+                    p{
+                        margin-bottom: 1rem;
+                    }
+                    a{
+                        font-size: 1rem;
+                        @include tablet{
+                            opacity: 0.75;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    .bottom{
+        padding: 2rem 0;
+        padding-bottom: 6rem;
+        @include mobile{
+            padding-bottom: 3rem;
+        }
+        @include tablet{
+            padding-bottom: 3rem;
+        }
+        .logo{
+            padding-bottom: 4rem;
+            @include mobile{
+                padding-bottom: 2rem;
+            }
+            @include tablet{
+                padding-bottom: 2rem;
+            }
+        }
+        .info{
+            display: flex;
+            padding: 0;
+            justify-content: space-between;
+            padding-block: 2rem;
+            @include mobile{
+                flex-direction: column;
+            }
+            .left{
+                p{
+                    //width: 50%;
+                    @include mobile{
+                        padding-bottom: 2.5rem;
+                    }
+                }
+            }
+            .right{
+                text-align: right;
+                @include mobile{
+                    text-align: left;
+                }
+                p{
+                    opacity: 0.5;
+                }
+                a{
+                    opacity: 1;
+                }
+                .underline{
+                    height: 1.5px;
+                    width: 102px;
+                    background-color: #fff;
+                    margin-top: 7px;
+                }
+            }
         }
     }
 }

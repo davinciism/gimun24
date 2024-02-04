@@ -93,6 +93,9 @@
                 @include mobile{
                     background-position: center center;
                 }
+                @include tablet{
+                    background-position: center center;
+                }
             }
             .two{
                 background-color: #fff;
@@ -106,7 +109,9 @@
                     font-size: 2rem;
                     @include mobile{
                         font-size: 1rem;
-
+                    }
+                    @include tablet{
+                        font-size: 1.5rem;
                     }
                 }
             }
@@ -120,6 +125,10 @@
                     float: right;
                     @include mobile{
                         height: 20vh;
+                        width: 100%;
+                    }
+                    @include tablet{
+                        height: 25vh;
                         width: 100%;
                     }
                 }
@@ -137,6 +146,13 @@
                         font-size: 1rem;
                         flex-direction: column;
                         justify-content: center;
+                    }
+                    @include tablet{
+                        left: 50%;
+                        transform: translateX(-50%);
+                        font-size: 1rem;
+                        flex-direction: column;
+                        font-size: 1.5rem;
                     }
                 }
             }
@@ -161,11 +177,17 @@
                     @include mobile{
                         font-size: 1.5rem;
                     }
+                    @include tablet{
+                        font-size: 1.5rem;
+                    }
                 }
                 h2{
                     font-size: 2rem;
                     margin-bottom: 2rem;
                     @include mobile{
+                        font-size: 1rem;
+                    }
+                    @include tablet{
                         font-size: 1rem;
                     }
                 }
@@ -200,6 +222,9 @@
                         span{
                             font-weight: 700;
                         }
+                        @include tablet{
+                            font-size: 1.125rem;
+                        }
                     }
                     
                 }
@@ -220,6 +245,9 @@
                     align-items: center;
                     text-align: center;
                     font-size: 1.5rem;
+                    @include tablet{
+                        font-size: 1.25rem;
+                    }
                 }
                 .nine{
                     height: 30vh;
@@ -228,6 +256,11 @@
                     align-items: center;
                     @include mobile{
                         display: none;
+                    }
+                    @include tablet{
+                        img{
+                            width: 80%;
+                        }
                     }
                 }
             }
@@ -243,10 +276,14 @@
 
 .letter{
     padding: 10rem 0;
+    padding-bottom: 2rem;
     width: 45%;
     @include mobile{
         width: 75%;
         padding: 5rem 0;
+    }
+    @include tablet{
+        width: 75%;
     }
     h1{
         line-height: 144%;
@@ -276,6 +313,9 @@
     @include mobile{
         padding: 5rem 0;
     }
+    @include tablet{
+        padding: 5rem 0;
+    }
     h1{
         padding-bottom: 6rem;
         margin: 0 auto;
@@ -283,6 +323,11 @@
         @include mobile{
             width: 90%;
             padding-bottom: 3rem;
+        }
+        @include tablet{
+            width: 50%;
+            text-align: left;
+            margin: 0 10%;
         }
     }
     
@@ -300,7 +345,7 @@
             height: 90%;
             display: flex;
             gap: 3rem;
-            width: 140%;
+            width: 130%;
             overflow: visible;
             padding: 0 8rem;
             @include mobile{
@@ -309,6 +354,11 @@
                 gap: 1rem;
                 width: 100%;
                 height: auto;
+            }
+            @include tablet{
+                padding: 0 4.5rem;
+                gap: 2rem;
+                width: 180%;
             }
             .card{
                 height: 80%;
@@ -324,10 +374,23 @@
                     height: 75%;
                     background-image: url('/assets/comm/ukraine.png');
                     background-size: cover;
+                    background-position: center;
                     border-radius: 1rem 1rem 0 0;
                     @include mobile{
                         width: 100%;
                     }
+                }
+                .two{
+                    background-image: url('/assets/comm/unhrc.png');
+                }
+                .three{
+                    background-image: url('/assets/comm/nuclear.jpg');
+                }
+                .four{
+                    background-image: url('/assets/comm/electoral.jpg');
+                }
+                .five{
+                    background-image: url('/assets/comm/ip.jpg');
                 }
                 .bottom{
                     display: flex;
@@ -341,8 +404,9 @@
                     @include mobile{
                         //padding: 0 .5rem;
                         padding-inline: .5rem;
-                        width: 100%;
-                        gap: 5rem;
+                        //width: 100%;
+                        //gap: clamp(5rem, 6vw, 8rem);
+                        gap: 5rem
                     }
                     h3{
                         font-size: 1.5rem;
@@ -387,6 +451,10 @@
         @include mobile{
             padding-bottom: 3rem;
         }
+        @include tablet{
+            padding-bottom: 3rem;
+            text-align: center;
+        }
     }
     .day{
         display: flex;
@@ -402,6 +470,10 @@
             @include mobile{
                 padding-bottom: 1.5rem;
             }
+            @include tablet{
+                padding-right: 2rem;
+                font-size: 2rem;
+            }
             h2{
                 font-size: 1.5rem;
                 font-weight: 700;
@@ -412,6 +484,9 @@
                 @include mobile{
                     text-align: left;
                     font-size: 1.25rem;
+                }
+                @include tablet{
+                    font-size: 1.5rem;
                 }
             }
             .divider{
@@ -434,6 +509,10 @@
                 @include mobile{
 
                 }
+                @include tablet{
+                    justify-content: flex-start;
+                    gap: 1.5rem;
+                }
                 p{
                     width: 40%;
                     margin-left: 4rem;
@@ -443,10 +522,18 @@
                         @include mobile{
                             width: 40%;
                         }
+                        @include tablet{
+                            width: 40%;
+                        }
                     }
                     @include mobile{
                         margin-left: 0;
                         font-size: 0.75rem;
+                        width: 50%;
+                    }
+                    @include tablet{
+                        margin-left: 0.5rem;
+                        font-size: 1rem;
                         width: 50%;
                     }
                 }
@@ -468,6 +555,9 @@
             margin-left: 0;
             width: 100%;
             margin-bottom: 2rem;
+        }
+        @include tablet{
+            margin-bottom: 4rem;
         }
     }
 }
