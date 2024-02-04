@@ -479,6 +479,11 @@ footer .bottom .info .right .underline {
 .info {
   padding: 14rem 0;
 }
+@media (max-width: 600px) {
+  .info {
+    padding: 10rem 0;
+  }
+}
 .info h1 {
   font-family: "Inter", sans-serif;
   font-size: 3rem;
@@ -491,10 +496,21 @@ footer .bottom .info .right .underline {
   opacity: 1;
   color: #fff;
 }
+@media (max-width: 600px) {
+  .info h1 {
+    font-size: 2rem;
+    line-height: 150%;
+  }
+}
 .info h3 {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
+}
+@media (max-width: 600px) {
+  .info h3 {
+    font-size: 1.125rem;
+  }
 }
 
 .bento .bento-container {
@@ -900,7 +916,7 @@ footer .bottom .info .right .underline {
 }
 @media (max-width: 600px) {
   .committees .scroll-container .row .card .bottom {
-    padding-inline: 0.5rem;
+    padding-inline: 2rem;
     gap: 5rem;
   }
 }
@@ -918,7 +934,7 @@ footer .bottom .info .right .underline {
 }
 @media (max-width: 600px) {
   .committees .scroll-container .row .card .bottom img {
-    height: 1rem;
+    height: 1.5rem;
   }
 }
 .committees ::-webkit-scrollbar-track {

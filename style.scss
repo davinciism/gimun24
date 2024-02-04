@@ -29,6 +29,9 @@
 
 .info{
     padding: 14rem 0;
+    @include mobile{
+        padding: 10rem 0;
+    }
     h1{
         font-family: 'Inter', sans-serif;
         font-size: 3rem;
@@ -40,11 +43,18 @@
             opacity: 1;
             color: #fff;
         }
+        @include mobile{
+            font-size: 2rem;
+            line-height: 150%;
+        }
     }
     h3{
         font-size: 1.5rem;
         font-weight: 400;
         margin-bottom: 1.5rem;
+        @include mobile{
+            font-size: 1.125rem;
+        }
     }
 }
 
@@ -403,10 +413,10 @@
                     border-top: 0;
                     @include mobile{
                         //padding: 0 .5rem;
-                        padding-inline: .5rem;
+                        padding-inline: 2rem;
                         //width: 100%;
                         //gap: clamp(5rem, 6vw, 8rem);
-                        gap: 5rem
+                        gap: 5rem;
                     }
                     h3{
                         font-size: 1.5rem;
@@ -418,8 +428,9 @@
                         height: 2rem;
                         filter: invert(100);
                         @include mobile{
-                            height: 1rem;
+                            height: 1.5rem;
                         }
+                        
                     }
                 }
             }
