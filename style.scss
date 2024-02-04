@@ -54,8 +54,12 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        width: 100%;
         $card-width: 100%;
+        @include mobile{
+            //flex-direction: column;   
+            align-items: center;
+            
+        }
         .column{
             display: flex;
             flex-direction: column;
@@ -63,18 +67,32 @@
             margin: 1rem;
             width: 30%;
             height: 90vh; //HEIGHT of the COLUMN **
+            @include mobile{
+                height: auto;
+                row-gap: 1rem;
+                margin: 0.5rem;
+            }
 
             .card{
                 width: $card-width;
                 border-radius: 1rem;
                 height: 30vh;
+                @include mobile{
+                   // width: 25%;
+                }
             }
         }
         .c1{
             width: 25%;
+            @include mobile{
+                width: 40%;
+            }
             .one{
                 background-image: url('/assets/gun-img.jpg');
                 background-size: cover;
+                @include mobile{
+                    background-position: center center;
+                }
             }
             .two{
                 background-color: #fff;
@@ -86,6 +104,10 @@
                     text-transform: uppercase;
                     color: #000;
                     font-size: 2rem;
+                    @include mobile{
+                        font-size: 1rem;
+
+                    }
                 }
             }
             .three{
@@ -96,6 +118,10 @@
                 img{
                     width: 70%;
                     float: right;
+                    @include mobile{
+                        height: 20vh;
+                        width: 100%;
+                    }
                 }
                 a{
                     position: absolute;
@@ -105,6 +131,13 @@
                     align-items: center;
                     gap: 1rem;
                     font-size: 2rem;
+                    @include mobile{
+                        left: 50%;
+                        transform: translateX(-50%);
+                        font-size: 1rem;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
                 }
             }
         }
@@ -112,6 +145,9 @@
             width: 23%;
             display: flex;
             justify-content: space-between;
+            @include mobile{
+                width: 40%;
+            }
             .four{
                 background: linear-gradient(122deg, #1A9CDA 0%, #1674BA 100%);
                 height: 55vh;
@@ -122,10 +158,16 @@
                 h1{
                     font-size: 3rem;
                     margin-bottom: 1rem;
+                    @include mobile{
+                        font-size: 1.5rem;
+                    }
                 }
                 h2{
                     font-size: 2rem;
                     margin-bottom: 2rem;
+                    @include mobile{
+                        font-size: 1rem;
+                    }
                 }
             }
             .five{
@@ -137,6 +179,9 @@
         }
         .c3{
             width: 35%;
+            @include mobile{
+                display: none;
+            }
             .six{
                 border-radius: 1rem;
                 background: linear-gradient(138deg, #F8C017 -1.44%, #FFA800 100%);
@@ -194,4 +239,241 @@
         
     }
     
+}
+
+.letter{
+    padding: 10rem 0;
+    width: 45%;
+    @include mobile{
+        width: 75%;
+        padding: 5rem 0;
+    }
+    h1{
+        line-height: 144%;
+        padding: 3rem 0;
+        font-size: 2rem;
+        @include mobile{
+            padding: 1.5rem 0;
+        }
+    }
+    .divider{
+        width: 2rem;
+        height: .5rem;
+        background-color: $accent;
+        //margin-bottom: 2rem;
+    }
+    p{
+        padding: 3rem 0;
+        opacity: .75;
+        @include mobile{
+            font-size: 0.85rem;
+        }
+    }
+}
+
+.committees{
+    padding: 10rem 0;
+    @include mobile{
+        padding: 5rem 0;
+    }
+    h1{
+        padding-bottom: 6rem;
+        margin: 0 auto;
+        width: 80%;
+        @include mobile{
+            width: 90%;
+            padding-bottom: 3rem;
+        }
+    }
+    
+    .scroll-container{
+        height: 65vh;
+        //background-color: #FFA800;
+        width: 100%;
+        overflow-x: scroll;
+        @include mobile{
+            height: auto;
+            overflow-x: visible;
+        }
+        .row{
+            //background-color: #1A9CDA;
+            height: 90%;
+            display: flex;
+            gap: 3rem;
+            width: 140%;
+            overflow: visible;
+            padding: 0 8rem;
+            @include mobile{
+                overflow-x: scroll;
+                padding: 0 1rem;
+                gap: 1rem;
+                width: 100%;
+                height: auto;
+            }
+            .card{
+                height: 80%;
+                background-color: $card;
+                display: block;
+                width: 50%;
+                border-radius: 1rem;
+                @include mobile{
+                    height: 40vh;
+                    width: 14rem; //Not working -> use .bottom gap to change width
+                }
+                .top{
+                    height: 75%;
+                    background-image: url('/assets/comm/ukraine.png');
+                    background-size: cover;
+                    border-radius: 1rem 1rem 0 0;
+                    @include mobile{
+                        width: 100%;
+                    }
+                }
+                .bottom{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 25%;
+                    padding: 0 1.5rem;
+                    border: 4px solid rgba(255, 255, 255, 0.20);
+                    border-radius: 0 0 1rem 1rem;
+                    border-top: 0;
+                    @include mobile{
+                        //padding: 0 .5rem;
+                        padding-inline: .5rem;
+                        width: 100%;
+                        gap: 5rem;
+                    }
+                    h3{
+                        font-size: 1.5rem;
+                        @include mobile{
+                            font-size: 1rem;
+                        }
+                    }
+                    img{
+                        height: 2rem;
+                        filter: invert(100);
+                        @include mobile{
+                            height: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ::-webkit-scrollbar-track{
+        width: 150px !important;
+    }
+    ::-webkit-scrollbar{
+        height: 0.5rem;
+        background: rgba(255, 255, 255, 0.20);
+        border-radius: 0.8rem;
+        display: none;
+    }
+    ::-webkit-scrollbar-thumb{
+        height: 0.5rem;
+        border-radius: 0.8125rem;
+        background: #FFF;
+    }
+}
+
+.schedule{
+    padding-bottom: 2rem;
+    @include mobile{
+        padding-top: 3rem;
+    }
+    h1{
+        padding-bottom: 8rem;
+        @include mobile{
+            padding-bottom: 3rem;
+        }
+    }
+    .day{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6rem;
+        @include mobile{
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+        .left{
+            flex: 1;
+            padding-right: 4rem;
+            @include mobile{
+                padding-bottom: 1.5rem;
+            }
+            h2{
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: 144%;
+                color: $accent;
+                text-align: right;
+                margin-bottom: 2rem;
+                @include mobile{
+                    text-align: left;
+                    font-size: 1.25rem;
+                }
+            }
+            .divider{
+                height: 0.5rem;
+                width: 2.25rem;
+                background-color: $primary-light;
+                float: right;
+                @include mobile{
+                    float: left;
+                }
+            }
+        }
+        .right{
+            flex: 4;
+            .row{
+                display: flex;
+                align-items: center;
+                //justify-content: space-around;
+                margin-bottom: 1rem;
+                @include mobile{
+
+                }
+                p{
+                    width: 40%;
+                    margin-left: 4rem;
+                    font-size: 1.25rem;
+                    &:nth-child(1){
+                        width: 30%;
+                        @include mobile{
+                            width: 40%;
+                        }
+                    }
+                    @include mobile{
+                        margin-left: 0;
+                        font-size: 0.75rem;
+                        width: 50%;
+                    }
+                }
+                svg{
+                    width: 10%;
+                }
+            }
+        }
+        
+    }
+    .separator{
+        width: 90%;
+        height: 2px;
+        background-color: #fff;
+        opacity: 0.5;
+        margin-bottom: 6rem;
+        margin-left: 4rem;
+        @include mobile{
+            margin-left: 0;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 6rem;
 }
