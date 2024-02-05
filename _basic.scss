@@ -140,7 +140,7 @@ nav{
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 10000;
     .navbar{
         padding: 2rem 0;
         display: flex;
@@ -196,6 +196,7 @@ nav{
     }
 }
 
+/*
 .mobile-bottom-nav{
     position: fixed;
     bottom: 0;
@@ -215,7 +216,7 @@ nav{
         }
     }
 }
-
+*/
 footer{
     .world{
         display: flex;

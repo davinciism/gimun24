@@ -134,7 +134,7 @@ nav {
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 10000;
 }
 nav .navbar {
   padding: 2rem 0;
@@ -197,27 +197,27 @@ nav .navbar .menu ul li:nth-child(3) {
   }
 }
 
-.mobile-bottom-nav {
-  position: fixed;
-  bottom: 0;
-  padding: 0.75rem 0rem;
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  background-color: rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+/*
+.mobile-bottom-nav{
+    position: fixed;
+    bottom: 0;
+    padding: 0.75rem 0rem;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px); 
+    ul{
+        list-style: none;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        a{
+            font-size: 1rem;
+        }
+    }
 }
-.mobile-bottom-nav ul {
-  list-style: none;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-}
-.mobile-bottom-nav ul a {
-  font-size: 1rem;
-}
-
+*/
 footer .world {
   display: flex;
   gap: 6rem;
@@ -448,20 +448,26 @@ footer .bottom .info .right .underline {
 }
 
 .background {
-  width: 100%;
   height: 100vh;
-  background-color: bisque;
-  background-image: url("/assets/UN_General_Assembly_hall.jpg");
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  position: relative;
 }
 @media (max-width: 600px) {
   .background {
-    width: 100vw;
-    height: 100vh;
+    height: 75vh;
+  }
+}
+.background video {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translateX(-50%);
+}
+@media (max-width: 600px) {
+  .background video {
+    max-height: 75%;
   }
 }
 .background .overlay {
@@ -469,46 +475,95 @@ footer .bottom .info .right .underline {
   height: 100vh;
   background-image: linear-gradient(rgba(30, 30, 30, 0.55), #1E1E1E);
   z-index: 1;
+  position: absolute;
 }
 @media (max-width: 600px) {
   .background .overlay {
     width: 100vw;
+    height: 75vh;
+  }
+}
+.background .arrow,
+.background .arrow:before {
+  position: absolute;
+  left: 50%;
+  z-index: 100;
+}
+.background .arrow {
+  width: 40px;
+  height: 40px;
+  bottom: 10%;
+  margin: -20px 0 0 -20px;
+  -webkit-transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 2px #fff solid;
+  border-bottom: 2px #fff solid;
+}
+@media (max-width: 600px) {
+  .background .arrow {
+    width: 30px;
+    height: 30px;
+  }
+}
+.background .arrow:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  margin: -10px 0 0 -10px;
+  border-left: none;
+  border-top: none;
+  border-right: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
+}
+@keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -10px);
   }
 }
 
-.info {
+.main-info {
   padding: 14rem 0;
+  position: relative;
 }
 @media (max-width: 600px) {
-  .info {
-    padding: 10rem 0;
+  .main-info {
+    padding: 6rem 0;
   }
 }
-.info h1 {
+.main-info h1 {
   font-family: "Inter", sans-serif;
   font-size: 3rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.75);
   margin-bottom: 2rem;
 }
-.info h1 span {
+.main-info h1 span {
   font-weight: 700;
   opacity: 1;
   color: #fff;
 }
 @media (max-width: 600px) {
-  .info h1 {
+  .main-info h1 {
     font-size: 2rem;
     line-height: 150%;
   }
 }
-.info h3 {
+.main-info h3 {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
 }
 @media (max-width: 600px) {
-  .info h3 {
+  .main-info h3 {
     font-size: 1.125rem;
   }
 }
@@ -904,7 +959,7 @@ footer .bottom .info .right .underline {
 .committees .scroll-container .row .card .five {
   background-image: url("/assets/comm/ip.jpg");
 }
-.committees .scroll-container .row .card .bottom {
+.committees .scroll-container .row .card .card-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -915,25 +970,25 @@ footer .bottom .info .right .underline {
   border-top: 0;
 }
 @media (max-width: 600px) {
-  .committees .scroll-container .row .card .bottom {
+  .committees .scroll-container .row .card .card-bottom {
     padding-inline: 2rem;
     gap: 5rem;
   }
 }
-.committees .scroll-container .row .card .bottom h3 {
+.committees .scroll-container .row .card .card-bottom h3 {
   font-size: 1.5rem;
 }
 @media (max-width: 600px) {
-  .committees .scroll-container .row .card .bottom h3 {
+  .committees .scroll-container .row .card .card-bottom h3 {
     font-size: 1rem;
   }
 }
-.committees .scroll-container .row .card .bottom img {
+.committees .scroll-container .row .card .card-bottom img {
   height: 2rem;
   filter: invert(100);
 }
 @media (max-width: 600px) {
-  .committees .scroll-container .row .card .bottom img {
+  .committees .scroll-container .row .card .card-bottom img {
     height: 1.5rem;
   }
 }

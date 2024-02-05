@@ -9,7 +9,7 @@ main{
 
     nav{
         position: sticky;
-        padding-top: 15%;
+        margin-top: 15%;
         @include mobile{
             display: none;
         }
@@ -70,7 +70,7 @@ main{
         @include mobile{
             width: 100%;
             left: 0;
-            height: 100vh;
+            height: 50rem;
         }
         
         
@@ -133,8 +133,9 @@ main{
                     max-width: 25vw;
                     object-fit: cover;
                     @include mobile{
-                        height: auto;
+                        height: 25vh;
                         max-width: 100vw;
+                        margin-bottom: 0;
                     }
                     @include tablet{
                         height: 25vh;

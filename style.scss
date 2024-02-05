@@ -1,37 +1,100 @@
 @import '_basic';
 
+
 .background{
-    width: 100%;
     height: 100vh;
-    background-color: bisque;
-    background-image: url('/assets/UN_General_Assembly_hall.jpg');
-    position: absolute;
-    top: 0;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    position: relative;
     @include mobile{
-        width: 100vw;
-        height: 100vh;
+        height: 75vh;
+    }
+    video{
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        transform: translateX(-50%);
+        @include mobile{
+            //top: 50%;
+            //bottom: 50%;
+            max-height: 75%;
+        }
     }
     .overlay{
         width: 100%;
         height: 100vh;
         background-image: linear-gradient(rgba(30,30,30,.55), #1E1E1E);
         z-index: 1;
+        position: absolute;
         @include mobile{
             width: 100vw;
+            height: 75vh;
         }
     }
+    .arrow,
+    .arrow:before{
+        position: absolute;
+        left: 50%;
+        z-index: 100;
+        
+    }
+    .arrow{
+        width: 40px;
+        height: 40px;
+        bottom: 10%;
+        margin: -20px 0 0 -20px;
+        -webkit-transform: rotate(45deg);
+        border-left: none;
+        border-top: none;
+        border-right: 2px #fff solid;
+        border-bottom: 2px #fff solid;
+        @include mobile{
+            width: 30px;
+            height: 30px;
+        }
     
+    }  
+    .arrow:before{
+        content: '';
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        margin: -10px 0 0 -10px;
+        border-left: none;
+        border-top: none;
+        border-right: 1px #fff solid;
+        border-bottom: 1px #fff solid;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: arrow;
+    }
+    @keyframes arrow{
+        0%{
+            opacity: 1;
+        }
+        
+        100%{
+            opacity: 0;
+            transform: translate(-10px, -10px);
+        }
+        
+    }
+  
 }
 
 
-.info{
+
+.main-info{
     padding: 14rem 0;
+    position: relative;
+    //margin-top: 50%;
+    //transform: translateY(50%);
     @include mobile{
-        padding: 10rem 0;
+        padding: 6rem 0;
     }
+
+    
     h1{
         font-family: 'Inter', sans-serif;
         font-size: 3rem;
@@ -402,7 +465,7 @@
                 .five{
                     background-image: url('/assets/comm/ip.jpg');
                 }
-                .bottom{
+                .card-bottom{
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
